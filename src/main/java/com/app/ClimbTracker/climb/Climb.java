@@ -1,8 +1,7 @@
 package com.app.ClimbTracker.climb;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.app.ClimbTracker.user.AppUser;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -22,6 +21,11 @@ public class Climb {
     private String style;
     private Boolean isCompleted;
     private LocalDate date;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private AppUser user;
 
     public Climb() {}
 
@@ -52,6 +56,10 @@ public class Climb {
         return date;
     }
 
+    public AppUser getUser() {
+        return user;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -70,5 +78,9 @@ public class Climb {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public void setUser(AppUser user) {
+        this.user = user;
     }
 }
