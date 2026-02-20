@@ -21,14 +21,13 @@ The application is fully deployed on the cloud using **Render** and **PostgreSQL
 
 ---
 
-## ✨ Key Features
+### ✨ Key Features
 
-* **Authentication & Authorization:** Implements Spring Security with a custom `UserDetailsService`. Users can securely register, and all climb data is strictly isolated (users can only view, update, and delete their own climbs). Passwords are cryptographically hashed using BCrypt.
-* **Relational Database Mapping:** Utilizes Spring Data JPA to manage One-to-Many relationships between `AppUser` and `Climb` entities.
-* **Global Exception Handling:** Uses `@RestControllerAdvice` to intercept `@Valid` constraints, returning clean, formatted error messages to the client when invalid data is submitted.
-* **Interactive API Documentation:** Integrated with OpenAPI 3 (Swagger) for real-time endpoint testing and schema visualization.
-* **Automated Testing Suite:** * **Data Layer:** Uses `@DataJpaTest` configured to run against a real local PostgreSQL instance to ensure true production-parity database testing.
-    * **Web Layer:** Uses `@WebMvcTest` and Spring Boot 4's new `@MockitoBean` to perform rapid, isolated testing of controller logic and JSON serialization without starting the full server.
+* **Cloud-Ready Containerization:** Features a multi-stage `Dockerfile` specifically optimized for deploying the application to cloud platforms like **Render**. This ensures the Java backend is automatically compiled and packaged into a lightweight, production-ready environment.
+* **Robust Relational Data (PostgreSQL):** Drops in-memory toys for a true production database. Utilizes PostgreSQL for reliable data persistence, ensuring data integrity, scalability, and seamless transitions between local testing and cloud deployment.
+* **Spring Security & Identity Management:** Implements a rigorous authentication layer using a custom `UserDetailsService`. Passwords are cryptographically hashed using BCrypt, and API endpoints are strictly protected to ensure users can only modify their own relational data.
+* **Spring Data JPA & ORM Mapping:** Leverages Hibernate to handle complex Object-Relational Mapping (ORM). Manages One-to-Many entity relationships dynamically without needing to write raw SQL queries for standard CRUD operations.
+* **Interactive API Documentation:** Integrated with OpenAPI 3 (Swagger UI), generating a live, interactable web interface directly from the Java code for seamless endpoint testing by clients or frontend teams.
 
 ---
 
