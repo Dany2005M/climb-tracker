@@ -24,7 +24,7 @@ The application is fully deployed on the cloud using **Render** and **PostgreSQL
 ### ✨ Key Features
 
 * **Cloud-Ready Containerization:** Features a multi-stage `Dockerfile` specifically optimized for deploying the application to cloud platforms like **Render**. This ensures the Java backend is automatically compiled and packaged into a lightweight, production-ready environment.
-* **Robust Relational Data (PostgreSQL):** Drops in-memory toys for a true production database. Utilizes PostgreSQL for reliable data persistence, ensuring data integrity, scalability, and seamless transitions between local testing and cloud deployment.
+* **Robust Relational Data (PostgreSQL):** Utilizes PostgreSQL for reliable data persistence, ensuring data integrity, scalability, and seamless transitions between local testing and cloud deployment.
 * **Spring Security & Identity Management:** Implements a rigorous authentication layer using a custom `UserDetailsService`. Passwords are cryptographically hashed using BCrypt, and API endpoints are strictly protected to ensure users can only modify their own relational data.
 * **Spring Data JPA & ORM Mapping:** Leverages Hibernate to handle complex Object-Relational Mapping (ORM). Manages One-to-Many entity relationships dynamically without needing to write raw SQL queries for standard CRUD operations.
 * **Interactive API Documentation:** Integrated with OpenAPI 3 (Swagger UI), generating a live, interactable web interface directly from the Java code for seamless endpoint testing by clients or frontend teams.
